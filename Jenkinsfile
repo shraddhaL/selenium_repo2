@@ -25,23 +25,7 @@ pipeline {
 	    }
         }  
 	    
-	/*   stage('Build Jar') {
-	    
-		steps {
-		   	//////sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
-        		//bat 'docker system prune --all --volumes --force'
-			
-			sh '''var=$(cat propsfile)
-echo $var
-mvn clean package -DskipTests -Duuid="$var"'''
-		/*	sh 'var=$(cat propsfile)'
-			sh 'echo $var'
-			sh ''//temp=cat propsfile | mvn -Dxyz="$TEMP"
-			//sh 'mvn clean package -DskipTests'
-			sh ''
-		   sh 'mvn clean package -DskipTests -Duuid="$var"'*/
-        }
-        }*/
+
 	   
 	 
 	    
