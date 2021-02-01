@@ -53,6 +53,8 @@ pipeline {
 	 stage('test') {
             steps {
 		    script {
+			    //sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
+        		//bat 'docker system prune --all --volumes --force'
 		    sh 'cat propsfile'
 			//--> //sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
 			   sh '''var=$(cat propsfile)
