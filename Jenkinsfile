@@ -27,12 +27,15 @@ pipeline {
 	    
 	   stage('Build Jar') {
 	    
-		steps {////
-		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
+		steps {
+		   	//////sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//bat 'docker system prune --all --volumes --force'
-			//sh 'tmp=cat propsfile'
-			sh 'echo $UUID'
-		       sh 'mvn clean package -DskipTests -Duuid=$UUID'
+			sh 'tmp=cat propsfile'
+			sh 'echo tmp'
+			
+			sh 'echo ${tmp}'
+			sh 'echo $tmp'
+		       sh 'mvn clean package -DskipTests -Duuid=$tmp'
         }
         }
 	   
