@@ -25,7 +25,7 @@ pipeline {
 	    }
         }  
 	    
-	   stage('Build Jar') {
+	/*   stage('Build Jar') {
 	    
 		steps {
 		   	//////sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
@@ -41,7 +41,7 @@ mvn clean package -DskipTests -Duuid="$var"'''
 			sh ''
 		   sh 'mvn clean package -DskipTests -Duuid="$var"'*/
         }
-        }
+        }*/
 	   
 	 
 	    
@@ -71,7 +71,9 @@ mvn clean package -DskipTests -Duuid="$var"'''
 		    script {
 		    sh 'cat propsfile'
 			//--> //sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
-			sh 'mvn -Dtest="SearchTest.java" test'
+			   sh '''var=$(cat propsfile)
+				echo $var
+			mvn -Dtest="SearchTest.java" test  -Duuid="$var"'''
                 }
 	    }
 	 }
