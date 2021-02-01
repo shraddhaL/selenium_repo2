@@ -32,9 +32,11 @@ pipeline {
         		//bat 'docker system prune --all --volumes --force'
 			
 			
-			sh 'var=$(cat propsfile)|echo $var'
+			sh 'var=$(cat propsfile)'
+			sh 'echo $var'
 			sh ''//temp=cat propsfile | mvn -Dxyz="$TEMP"
 			//sh 'mvn clean package -DskipTests'
+			sh ''
 		   sh 'mvn clean package -DskipTests -Duuid=$var'
         }
         }
