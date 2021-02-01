@@ -58,7 +58,7 @@ pipeline {
 			sh 'mvn -Dtest="SearchTest.java" test'
                 }
 	    }
-        }    
+       
 	    
 	
 }
