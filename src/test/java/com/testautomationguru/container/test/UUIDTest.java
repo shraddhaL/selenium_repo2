@@ -26,7 +26,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
-public class Test {
+public class UUIDTest {
 protected WebDriver driver;
     
       @BeforeSuite
@@ -59,6 +59,7 @@ protected WebDriver driver;
         System.out.println("current URL of the page fetched: "+URL); 
         String s1 = System.getProperty("uuid");
         System.out.println(s1.substring(5));
+        String bodyText;
         bodyText = self.driver.find_element_by_tag_name("body").text;
               System.out.println(bodyText);  
         if(bodyText.equals(s1))
