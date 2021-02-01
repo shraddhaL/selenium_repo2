@@ -61,7 +61,7 @@ protected WebDriver driver;
         System.out.println(s1.substring(5));
         bodyText = self.driver.find_element_by_tag_name('body').text
               System.out.println(bodyText);  
-        if(bodyText==s1)
+        if(bodyText.equals(s1))
              {
             Assert.assertTrue(true);
              }
