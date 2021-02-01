@@ -17,12 +17,21 @@ pipeline {
         
 			   }
 	    
+	     stage('copy Artifacts') {
+            steps {
+                script {
+			copyArtifacts filter: 'propsfile', fingerprintArtifacts: true, projectName: 'deploy_to_container', selector: workspace()
+                }
+	    }
+        }  
+	    
 	   stage('Build Jar') {
 	    
 		steps {////
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//bat 'docker system prune --all --volumes --force'
-		       sh 'mvn clean package -DskipTests'
+			// sh 'cat propsfile'
+		       sh 'mvn clean package -DskipTests -Duuid=$UUID'
         }
         }
 	   
@@ -38,12 +47,11 @@ pipeline {
 	    }
         }
 	 
-	     stage('copy arti') {
+	     stage('archive Artifacts') {
             steps {
                 script {
 			archiveArtifacts artifacts: 'docker-compose.yml', followSymlinks: false
-			copyArtifacts filter: 'propsfile', fingerprintArtifacts: true, projectName: 'deploy_to_container', selector: workspace()
-                }
+			}
 	    }
         }  
 	    
