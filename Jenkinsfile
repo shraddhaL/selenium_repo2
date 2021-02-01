@@ -30,11 +30,12 @@ pipeline {
 		steps {
 		   	//////sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//bat 'docker system prune --all --volumes --force'
-			sh 'tmp=cat propsfile'
 			
-			sh 'echo ${tmp}'
-			sh 'echo $tmp'
-		       sh 'mvn clean package -DskipTests -Duuid=$tmp'
+			
+			sh 'var=$(cat propsfile)|echo $var'
+			//sh ''
+			//sh ''temp=cat propsfile | mvn -Dxyz="$TEMP"
+		    //   sh 'mvn clean package -DskipTests -Duuid=$var'
         }
         }
 	   
