@@ -59,7 +59,7 @@ protected WebDriver driver;
         System.out.println("current URL of the page fetched: "+URL); 
         String s1 = System.getProperty("uuid");
         System.out.println(s1.substring(5));
-        bodyText = self.driver.find_element_by_tag_name('body').text;
+        bodyText = self.driver.find_element_by_tag_name("body").text;
               System.out.println(bodyText);  
         if(bodyText.equals(s1))
              {
