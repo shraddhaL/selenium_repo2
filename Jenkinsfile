@@ -42,10 +42,14 @@ pipeline {
             steps {
                 script {
 			archiveArtifacts artifacts: 'docker-compose.yml', followSymlinks: false
+			copyArtifacts filter: 'propsfile', fingerprintArtifacts: true, projectName: 'deploy_to_container', selector: workspace()
                 }
 	    }
         }  
-	      
+	    
+
+
+
 	 stage('test') {
             steps {
                 script {
