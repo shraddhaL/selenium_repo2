@@ -17,13 +17,13 @@ pipeline {
         
 			   }
 	    
-	/*     stage('copy Artifacts') {
+    stage('copy Artifacts') {
             steps {
                 script {
 			copyArtifacts filter: 'propsfile', fingerprintArtifacts: true, projectName: 'deploy_to_container', selector: workspace()
                 }
 	    }
-        }  */
+        }  
 	    
 	   stage('Build Jar') {
 	    
@@ -32,10 +32,10 @@ pipeline {
         		//bat 'docker system prune --all --volumes --force'
 			
 			
-			//sh 'var=$(cat propsfile)|echo $var'
-			//sh ''//temp=cat propsfile | mvn -Dxyz="$TEMP"
-			sh 'mvn clean package -DskipTests'
-		    //   sh 'mvn clean package -DskipTests -Duuid=$var'
+			sh 'var=$(cat propsfile)|echo $var'
+			sh ''//temp=cat propsfile | mvn -Dxyz="$TEMP"
+			//sh 'mvn clean package -DskipTests'
+		   sh 'mvn clean package -DskipTests -Duuid=$var'
         }
         }
 	   
