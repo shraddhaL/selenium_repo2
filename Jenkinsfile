@@ -57,7 +57,7 @@ pipeline {
 			//--> //sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
 			   sh '''var=$(cat propsfile)
 				echo $var
-			mvn -Dtest="SearchTest.java" test  -Duuid="$var"'''
+			mvn -Dtest="Test.java" test  -Duuid="$var"'''
                 }
 	    }
 	 }
