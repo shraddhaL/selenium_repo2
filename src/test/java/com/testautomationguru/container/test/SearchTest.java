@@ -70,8 +70,8 @@ protected WebDriver driver;
             }
         
         
-        String s1 = System.getProperty("uuid");
-          System.out.println(s1);  
+        
+        
     }
     @AfterTest
     public void tearDown() throws InterruptedException {
