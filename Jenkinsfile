@@ -31,6 +31,7 @@ pipeline {
 		   	//sh'docker stop $(docker ps -q) || docker rm $(docker ps -a -q) || docker rmi $(docker images -q -f dangling=true)'
         		//bat 'docker system prune --all --volumes --force'
 			// sh 'cat propsfile'
+			echo $UUID
 		       sh 'mvn clean package -DskipTests -Duuid=$UUID'
         }
         }
