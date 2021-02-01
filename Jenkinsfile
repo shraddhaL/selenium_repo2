@@ -52,13 +52,13 @@ pipeline {
 
 	 stage('test') {
             steps {
-                script 
+		    script {
 		    sh 'cat propsfile'
 			//--> //sh 'mvn -Dtest="SearchTest.java,SearchTest2.java" test'
 			sh 'mvn -Dtest="SearchTest.java" test'
                 }
 	    }
-       
+	 }
 	    
 	
 }
