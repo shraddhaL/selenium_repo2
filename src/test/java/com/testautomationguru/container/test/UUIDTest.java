@@ -60,7 +60,7 @@ protected WebDriver driver;
         String s1 = System.getProperty("uuid");
         System.out.println(s1.substring(5));
         String bodyText;
-        bodyText = self.driver.find_element_by_tag_name("body").text;
+        bodyText = driver.findElement(By.tagName("body")).getText();
               System.out.println(bodyText);  
         if(bodyText.equals(s1))
              {
