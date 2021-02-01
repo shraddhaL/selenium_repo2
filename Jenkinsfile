@@ -33,8 +33,8 @@ pipeline {
 			
 			
 			sh 'var=$(cat propsfile)|echo $var'
-			//sh ''
-			//sh ''temp=cat propsfile | mvn -Dxyz="$TEMP"
+			//sh ''//temp=cat propsfile | mvn -Dxyz="$TEMP"
+			
 		    //   sh 'mvn clean package -DskipTests -Duuid=$var'
         }
         }
